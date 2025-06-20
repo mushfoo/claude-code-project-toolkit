@@ -83,3 +83,10 @@ Structure the generated onboarding prompt as a complete markdown document that c
 - **Include critical workflow reminders** to prevent common mistakes
 
 Start by analyzing the PRD I provided, then ask your targeted questions to fill in the project-specific details needed for the onboarding prompt.
+
+## Output Requirements
+
+**Save the onboarding prompt as**: `planning/onboarding-prompt.md`
+- Create the planning/ directory if it doesn't exist
+- This file should be used to start new Claude Code development sessions
+- Update as needed when project context changes significantly

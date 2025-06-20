@@ -170,3 +170,10 @@ Please create:
 5. **Sprint Planning Suggestions**: Recommended grouping of tasks for development sprints
 
 Analyze the provided PRD and create a comprehensive task breakdown following this structure.
+
+## Output Requirements
+
+**Save the task breakdown as**: `planning/detailed-task-breakdown.md`
+- Create the planning/ directory if it doesn't exist
+- This file will contain the comprehensive task list for development
+- Use git to track updates as tasks are completed or modified

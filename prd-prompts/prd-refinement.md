@@ -245,3 +245,11 @@ Create a separate summary for stakeholders:
 7. **Validate the updated PRD**: Ensure the refined document still serves its purpose as a development guide
 
 Please analyze the provided PRD and refinement requirements, then create an updated version that addresses all requested changes while maintaining document quality and internal consistency.
+
+## Output Requirements
+
+**Update the existing PRD file**: `planning/prd.md`
+- Modify the existing file in place
+- Use git commits to track changes and versions
+- Include a clear commit message describing the refinements made
+- Consider creating a git tag for major version milestones

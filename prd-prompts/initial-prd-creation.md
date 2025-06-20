@@ -119,3 +119,10 @@ Before writing the PRD, please ask any clarifying questions about:
 - **Scope boundaries**: What is explicitly NOT included in this project?
 
 Please analyze the project concept provided and create a comprehensive PRD following this structure. Start by asking any necessary clarifying questions, then proceed with the complete document.
+
+## Output Requirements
+
+**Save the completed PRD as**: `planning/prd.md`
+- Create the planning/ directory if it doesn't exist
+- Use git for version control instead of filename versioning
+- This will be the single source of truth for project requirements
