@@ -31,30 +31,46 @@ claude-code-project-toolkit/
 
 ## 🚀 Quick Start Guide
 
+### **Setup: Choose Your Workflow**
+
+**Option A: Claude Code Directory Access** (Recommended)
+
+- Add the toolkit directory to your Claude Code session file access
+- Reference files directly: "Analyze the `prd-prompts/initial-prd-creation.md` file and help me create a PRD"
+- No copy-paste needed, always uses latest version
+
+**Option B: Manual Copy-Paste**
+
+- Copy prompt content from files and paste into any AI tool
+- Works with any AI tool, not just Claude Code
+
 ### 1. **Create PRD** (30-60 minutes)
 
-- Copy `prd-prompts/initial-prd-creation.md`
-- Paste into Claude Code and answer questions about your project
-- Get comprehensive PRD
+**Option A**: "Analyze `prd-prompts/initial-prd-creation.md` and help me create a PRD for my project"  
+**Option B**: Copy `prd-prompts/initial-prd-creation.md` and paste into Claude Code
+
+Answer questions about your project and get comprehensive PRD
 
 ### 2. **Design UI/UX** (35-55 minutes)
 
-- Copy `ui-design/ui-ux-design-generator.md`
-- Paste into Claude Code with your completed PRD
-- Review 3 design options generated, then make your selection
-- Get complete prototype in your chosen design approach
+**Option A**: "Using `ui-design/ui-ux-design-generator.md`, create UI prototypes from my completed PRD"  
+**Option B**: Copy `ui-design/ui-ux-design-generator.md` and paste with your PRD
+
+Review 3 design options generated, then make your selection and get complete prototype
 
 ### 3. **Generate Tasks** (20-40 minutes)
 
-- Copy `task-generation/prd-to-tasks.md`
-- Paste into Claude Code with your completed PRD (now with UI specs)
-- Get detailed task breakdown with priorities and timelines
+**Option A**: "Using `task-generation/prd-to-tasks.md`, break down my PRD into development tasks"  
+**Option B**: Copy `task-generation/prd-to-tasks.md` and paste with your completed PRD
+
+Get detailed task breakdown with priorities and timelines
 
 ### 4. **Setup Onboarding** (10-15 minutes)
 
-- Copy `claude-onboarding/onboarding-prompt-generator.md`
-- Paste into Claude Code with your PRD and answer follow-up questions
-- Get customized onboarding prompt for your project
+**Option A**: "Using `claude-onboarding/onboarding-prompt-generator.md`, create an onboarding prompt for my project"  
+**Option B**: Copy `claude-onboarding/onboarding-prompt-generator.md` and paste with your PRD
+
+Answer follow-up questions and get customized onboarding prompt for your project
 
 ### 5. **Development Setup** (5 minutes)
 
