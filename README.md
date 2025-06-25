@@ -3,12 +3,12 @@
 **Problem**: Claude Code is incredibly powerful but has critical limitations that derail projects:
 
 - 🧠 **Context Loss**: Each new session starts from scratch, losing project history and decisions
-- ⚙️ **Over-Engineering**: Claude naturally creates complex solutions when simple ones work better  
+- ⚙️ **Over-Engineering**: Claude naturally creates complex solutions when simple ones work better
 - 📈 **Scope Creep**: Claude will happily build whatever you ask for without questioning necessity
 - 🔀 **Inconsistent Patterns**: Without guidance, Claude uses different approaches across sessions
 - 🧪 **Testing Gaps**: Claude focuses on making code work, not on real-world user validation
 
-**Solution**: This toolkit provides systematic processes that work *with* Claude Code's strengths while compensating for its limitations. Transform vague ideas into structured requirements, maintain context across sessions, and ensure every development session builds toward shipping working software that solves real user problems.
+**Solution**: This toolkit provides systematic processes that work _with_ Claude Code's strengths while compensating for its limitations. Transform vague ideas into structured requirements, maintain context across sessions, and ensure every development session builds toward shipping working software that solves real user problems.
 
 > **Note**: These prompts are optimized and tested specifically for Claude Code. The principles may apply to other AI development tools, but effectiveness is only verified with Claude Code.
 
@@ -19,32 +19,45 @@ claude-code-project-toolkit/
 ├── README.md                           # This guide
 ├── development-guidelines.md           # Reference doc - copy into projects
 ├── prd-prompts/
-│   ├── initial-prd-creation.md        # Conversation starter: idea → comprehensive PRD (30-60 min)
-│   └── prd-refinement.md              # Conversation starter: update PRDs based on feedback (15-30 min)
+│   ├── initial-prd-creation.md        # Conversation starter: idea → comprehensive PRD
+│   └── prd-refinement.md              # Conversation starter: update PRDs based on feedback
+├── ui-design/
+│   └── ui-ux-design-generator.md      # Conversation starter: PRD → design options → complete prototype
 ├── task-generation/
-│   └── prd-to-tasks.md                # Conversation starter: PRD → detailed task breakdown (20-40 min)
+│   └── prd-to-tasks.md                # Conversation starter: PRD → detailed task breakdown
 └── claude-onboarding/
-    └── onboarding-prompt-generator.md  # Conversation starter: PRD → project-specific onboarding prompt (10-15 min)
+    └── onboarding-prompt-generator.md  # Conversation starter: PRD → project-specific onboarding prompt
 ```
 
 ## 🚀 Quick Start Guide
 
 ### 1. **Create PRD** (30-60 minutes)
+
 - Copy `prd-prompts/initial-prd-creation.md`
 - Paste into Claude Code and answer questions about your project
 - Get comprehensive PRD
 
-### 2. **Generate Tasks** (20-40 minutes)  
-- Copy `task-generation/prd-to-tasks.md`
+### 2. **Design UI/UX** (35-55 minutes)
+
+- Copy `ui-design/ui-ux-design-generator.md`
 - Paste into Claude Code with your completed PRD
+- Review 3 design options generated, then make your selection
+- Get complete prototype in your chosen design approach
+
+### 3. **Generate Tasks** (20-40 minutes)
+
+- Copy `task-generation/prd-to-tasks.md`
+- Paste into Claude Code with your completed PRD (now with UI specs)
 - Get detailed task breakdown with priorities and timelines
 
-### 3. **Setup Onboarding** (10-15 minutes)
-- Copy `claude-onboarding/onboarding-prompt-generator.md` 
+### 4. **Setup Onboarding** (10-15 minutes)
+
+- Copy `claude-onboarding/onboarding-prompt-generator.md`
 - Paste into Claude Code with your PRD and answer follow-up questions
 - Get customized onboarding prompt for your project
 
-### 4. **Development Setup** (5 minutes)
+### 5. **Development Setup** (5 minutes)
+
 - Copy `development-guidelines.md` into your project repository
 - Save your generated onboarding prompt for daily use
 - Start developing with systematic task completion!
@@ -54,22 +67,35 @@ claude-code-project-toolkit/
 ### **All files are conversation starters** - copy from file, paste into Claude Code, no editing needed
 
 ### **For PRD Creation**
+
 - Be specific with concrete examples and measurable success criteria
 - Focus on real user problems, not theoretical features
 - Include Claude Code development considerations for rapid iteration
 
+### **For UI/UX Design**
+
+- Review all 3 options before selecting - they explore different user experience approaches
+- Test prototypes by actually clicking through them like a real user would
+- Consider your target personas when choosing between options
+- Mix elements from different options if needed ("Option 2 with Option 1's navigation")
+
 ### **For Task Breakdown**
+
 - Each task should be completable in 1-4 hours
 - Include testing requirements alongside feature development
 - Make dependencies clear and realistic
+- UI/UX tasks will be included based on your prototype specifications
 
 ### **For Development**
+
 - Follow `development-guidelines.md` to prevent over-engineering
 - Test every feature by actually using it as intended
 - Always use feature branches, never commit directly to main
 - Maintain >90% test coverage with meaningful tests
+- Reference UI prototypes during implementation for design consistency
 
 ### **For Onboarding**
+
 - Regenerate onboarding prompts when project context changes
 - Include enough context for effective development continuation
 - Reference guidelines file rather than duplicating content
@@ -77,19 +103,23 @@ claude-code-project-toolkit/
 ## 📚 Example Usage
 
 ### **New Dashboard Project**
-1. PRD Creation (45 min) → Task Breakdown (30 min) → Onboarding Setup (15 min)
-2. Copy development guidelines into project repo
-3. Daily development using onboarding prompt for each Claude Code session
 
-### **Existing Project Evolution**  
+1. PRD Creation (45 min) → UI Design Options (25 min) → UI Selection & Refinement (20 min) → Task Breakdown (30 min) → Onboarding Setup (15 min)
+2. Copy development guidelines into project repo
+3. Daily development using onboarding prompt for each Claude Code session, referencing UI prototypes
+
+### **Existing Project Evolution**
+
 1. PRD Refinement (20 min) with new requirements
-2. Generate new tasks (15 min) for additional features
-3. Regenerate onboarding prompt (10 min) with updated context
+2. UI Updates (15 min) if design changes needed
+3. Generate new tasks (15 min) for additional features
+4. Regenerate onboarding prompt (10 min) with updated context
 
 ### **Team Handoff**
-1. Ensure PRD and tasks are current
-2. Verify onboarding prompt has complete project context  
-3. Share development guidelines with new team members
+
+1. Ensure PRD, UI prototypes, and tasks are current
+2. Verify onboarding prompt has complete project context including design specs
+3. Share development guidelines and UI prototypes with new team members
 
 ## 🔄 Maintenance
 
