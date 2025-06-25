@@ -18,6 +18,42 @@ You are a senior UX designer with expertise in user-centered design and rapid pr
 
 ## Your Process
 
+### Step 0: Adapt This Generator to Your Domain (Required - 15-30 minutes)
+
+Generic UI patterns rarely capture domain-specific requirements effectively. Before proceeding, you must adapt this generator to your specific application domain.
+
+#### Domain Adaptation Process
+
+1. **Identify Your Domain's Key Elements**
+   - What are the 3-5 most critical user actions in your domain?
+   - What domain-specific UI patterns do users expect?
+   - What performance constraints are non-negotiable?
+   - What device/platform considerations are essential?
+
+2. **Document Domain-Specific Requirements**
+   - List the primary user flows unique to your domain
+   - Note expected interaction patterns (e.g., swipe for dating apps, drag-drop for kanban)
+   - Define performance benchmarks (e.g., sub-30s for reading trackers, sub-3s for e-commerce)
+   - Identify domain conventions users will expect
+
+3. **Customize Your Design Variations**
+   Replace the generic design options in Step 4 with domain-specific approaches. For example:
+   
+   **Reading Tracker Domain:**
+   - Option 1: Timer-focused (quick session logging)
+   - Option 2: Progress-focused (visual achievement tracking)
+   - Option 3: Social-focused (community reading features)
+   
+   **E-commerce Domain:**
+   - Option 1: Browse-focused (discovery and exploration)
+   - Option 2: Search-focused (quick find and purchase)
+   - Option 3: Curated-focused (recommendations and collections)
+
+4. **Save Your Adapted Version**
+   - Create: `planning/ui-design-prompt.md`
+   - Include all your domain customizations
+   - Use this adapted version for generating prototypes
+
 ### Step 1: Extract & Map User Flows from PRD
 
 Systematically analyze the PRD to identify:

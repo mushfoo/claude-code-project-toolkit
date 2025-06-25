@@ -51,7 +51,7 @@ claude-code-project-toolkit/
 
 Answer questions about your project and get comprehensive PRD
 
-### 2. **Design UI/UX** (35-55 minutes)
+### 2. **Design UI/UX** (50-85 minutes)
 
 **Option A**: "Using `ui-design/ui-ux-design-generator.md`, create UI prototypes from my completed PRD"  
 **Option B**: Copy `ui-design/ui-ux-design-generator.md` and paste with your PRD
@@ -94,6 +94,7 @@ Answer follow-up questions and get customized onboarding prompt for your project
 - Test prototypes by actually clicking through them like a real user would
 - Consider your target personas when choosing between options
 - Mix elements from different options if needed ("Option 2 with Option 1's navigation")
+- REQUIRED: First adapt the UI/UX Design Generator to your domain (Step 0) for relevant prototypes
 
 ### **For Task Breakdown**
 
@@ -120,7 +121,7 @@ Answer follow-up questions and get customized onboarding prompt for your project
 
 ### **New Dashboard Project**
 
-1. PRD Creation (45 min) → UI Design Options (25 min) → UI Selection & Refinement (20 min) → Task Breakdown (30 min) → Onboarding Setup (15 min)
+1. PRD Creation (45 min) → Domain Adaptation (20 min) → UI Design Options (30 min) → UI Selection & Refinement (20 min) → Task Breakdown (30 min) → Onboarding Setup (15 min)
 2. Copy development guidelines into project repo
 3. Daily development using onboarding prompt for each Claude Code session, referencing UI prototypes
 
