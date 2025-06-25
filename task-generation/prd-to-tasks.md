@@ -193,6 +193,8 @@ Each task should specify:
 
 ## Output Format
 
+**Save the completed task breakdown as**: `planning/tasks.md` to keep it organized with other project planning documents.
+
 Please create:
 
 1. **Executive Summary**: Overview of total tasks, estimated timeline, and major milestones

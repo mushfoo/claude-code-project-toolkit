@@ -80,7 +80,11 @@ Create a comprehensive onboarding prompt that includes:
 
 ## Output Format
 
-Structure the generated onboarding prompt as a complete markdown document that can be saved and used directly for Claude Code sessions. Include:
+Structure the generated onboarding prompt as a complete markdown document that can be saved and used directly for Claude Code sessions. 
+
+**File Location**: Save as `planning/onboarding-prompt.md` to keep it organized with other project planning documents.
+
+Include:
 
 1. **Clear project header** with name and context
 2. **Getting started checklist** for immediate orientation
