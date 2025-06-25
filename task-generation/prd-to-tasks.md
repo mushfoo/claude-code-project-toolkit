@@ -191,6 +191,42 @@ Each task should specify:
 - **Documentation parity**: Include documentation tasks alongside feature development
 - **Simplicity reminders**: Reference development guidelines to prevent over-engineering
 
+## Task Tracking Implementation
+
+Include the following task tracking instructions in your generated task breakdown:
+
+### Task Tracking Instructions
+
+Each task should include checkboxes in the "Acceptance Criteria", "Testing Requirements", and "Definition of Done" sections. These should be checked off during development:
+
+1. **During Development**: Check off acceptance criteria as each feature is implemented
+2. **During Testing**: Check off testing requirements as tests are written and passed
+3. **Before Task Completion**: Ensure all "Definition of Done" items are checked
+4. **Task Status**: Once all checkboxes are complete, mark the entire task as done by:
+   - Adding `✅ COMPLETED` to the task title
+   - Creating a commit with message: `Task [ID]: Mark as completed`
+   - Moving to the next task in the dependency chain
+
+**Example of completed task:**
+```markdown
+## Task F001: Initialize React + TypeScript + Vite Project ✅ COMPLETED
+```
+
+### Task Completion Status Table
+
+Include a status overview table at the beginning of the document:
+
+```markdown
+## Task Completion Status
+
+### Quick Status Overview
+| Epic | Total Tasks | Completed | In Progress | Not Started |
+|------|------------|-----------|-------------|-------------|
+| [Epic Name] | X | 0 | 0 | X |
+
+**Last Updated**: [Update this timestamp when marking tasks complete]
+```
+
 ## Output Format
 
 **Save the completed task breakdown as**: `planning/tasks.md` to keep it organized with other project planning documents.
