@@ -71,6 +71,15 @@ Create a comprehensive onboarding prompt that includes:
 - How to identify next tasks and track progress
 - Integration notes for APIs, services, deployment
 
+#### UI/UX Validation with Playwright Section
+
+- **Setup instructions** for Playwright testing environment
+- **Task agent delegation commands** for comprehensive UI/UX testing
+- **Mobile-first testing protocols** with specified viewport requirements
+- **Performance validation thresholds** and measurement approaches
+- **Quality gates** that must pass before PR creation
+- **Core user workflows** to test based on project requirements
+
 #### Project-Specific Context
 
 - File structure and organization conventions

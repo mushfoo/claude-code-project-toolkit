@@ -301,6 +301,90 @@ test('user can upload and process a configuration file', async () => {
 
 ---
 
+## UI/UX Testing with Playwright
+
+### 🎭 **Browser-Based User Experience Testing**
+
+While unit tests verify code behavior, Playwright tests validate actual user experience in real browsers. Use Playwright to ensure the UI works as intended across different devices and interaction patterns.
+
+### **When to Use Playwright Testing**
+- **Before PR Creation**: Test core user flows on mobile ({primary_viewport_size}) and desktop viewports
+- **After Major UI Changes**: Verify interactions still meet {performance_requirement} response requirement
+- **Epic/Feature Completion**: Validate acceptance criteria with real user journeys
+- **Mobile-First Validation**: Confirm touch targets, one-handed operation, responsive behavior
+- **Performance Validation**: Ensure UI interactions meet the {performance_requirement} standard in actual browsers
+
+### **Required Test Scenarios for {project_name}**
+{core_user_flows}
+
+### **Playwright Testing Commands**
+```bash
+# Start development server
+{dev_server_command}
+
+# In another terminal, delegate UI/UX testing to a sub-agent
+claude "Create a Task agent to test the core user flows with Playwright at {dev_server_url}. 
+The agent should:
+1. Navigate to the app and take screenshots
+2. Test the {primary_user_flow}
+3. Verify mobile responsiveness at {primary_viewport_size}
+4. Validate performance of interactions ({performance_requirement})
+5. Report findings and any UX issues discovered"
+```
+
+### **Using Task Agents for Systematic Testing**
+Rather than manually testing each flow, delegate comprehensive UI/UX testing to Task agents:
+
+```bash
+# Create specialized testing agents
+claude "Create a Task agent to test mobile UX on {project_name}:
+- Resize to {primary_viewport_size} viewport
+- Test all touch interactions
+- Verify one-handed operation
+- Check {mobile_specific_features}
+- Report mobile-specific issues"
+
+claude "Create a Task agent to test performance on {project_name}:
+- Measure interaction response times
+- Test with {data_volume_requirement}
+- Verify animation smoothness
+- Check {performance_critical_features}
+- Document any performance issues"
+```
+
+### **Mobile-First Testing Checklist**
+- [ ] Resize browser to {primary_viewport_size} width and test all interactions
+- [ ] Verify touch targets are at least 44x44px
+- [ ] Confirm one-handed operation is possible
+- [ ] Test {mobile_specific_features} work on mobile layout
+- [ ] Validate {mobile_interactive_elements} are touch-friendly
+- [ ] Ensure {mobile_ui_elements} don't interfere with content
+
+### **Performance Testing with Playwright**
+- [ ] Measure interaction response times ({performance_requirement} requirement)
+- [ ] Test with {data_volume_requirement}
+- [ ] Verify smooth animations and transitions
+- [ ] Confirm {performance_critical_features} respond quickly
+- [ ] Test {performance_sensitive_operations} feel immediate
+
+### **User Experience Validation**
+```javascript
+// Example of user-focused Playwright testing approach:
+// 1. Navigate to app
+// 2. {primary_user_flow_steps}
+// 3. Verify all interactions feel smooth and responsive
+```
+
+### **Quality Gates**
+- **No PR without Playwright validation**: All UI changes must be tested in actual browser
+- **Mobile testing mandatory**: Every UI change must be verified at {primary_viewport_size} viewport
+- **Performance requirements**: All interactions must feel under {performance_requirement} in real browser
+- **Real user workflows**: Test complete journeys, not isolated components
+
+{framework_specific_testing}
+
+---
+
 ## Quick Reference Checklist
 
 Before submitting any change, verify:
