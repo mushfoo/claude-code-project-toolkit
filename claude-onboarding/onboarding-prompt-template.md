@@ -154,7 +154,8 @@ All UI changes must pass these criteria:
 1. **Create feature branch**: `git checkout -b {branch_pattern}/description`
 2. **Regular commits**: Clear, descriptive commit messages
 3. **Before PR**: Run all tests, lint, and Playwright validation
-4. **PR process**: {pr_process}
+4. **Screenshots in PRs**: Use `https://raw.githubusercontent.com/ORG/REPO/BRANCH/screenshots/FILE.png` format (see development-guidelines.md for details)
+5. **PR process**: {pr_process}
 
 ### Testing Standards
 - **Coverage requirement**: {coverage_requirement}

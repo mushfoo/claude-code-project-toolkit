@@ -415,4 +415,68 @@ Before submitting any change, verify:
 
 ---
 
+## Screenshots in Pull Requests
+
+### 📸 **Adding Screenshots to Pull Requests**
+
+When including screenshots in pull request descriptions, use the following format to ensure they render properly:
+
+### ❌ **Don't Use These Formats**
+
+- **Relative Paths**: Don't use relative paths that won't resolve in GitHub
+  ```markdown
+  ![Screenshot](./screenshots/dashboard.png)
+  ![UI Change](../images/before-after.png)
+  ```
+
+- **Local File References**: Don't reference files only available on your machine
+  ```markdown
+  ![Feature](file:///Users/developer/project/screenshot.png)
+  ```
+
+- **Leading Slash in Markdown**: Don't add forward slashes before the image syntax
+  ```markdown
+  /![Screenshot](https://raw.githubusercontent.com/org/repo/branch/path/image.png)
+  ```
+
+### ✅ **Do Use This Format**
+
+**Correct Raw GitHub URL Format:**
+```markdown
+![Description](https://raw.githubusercontent.com/[org]/[repo]/[branch_name]/[path/to/screenshot])
+```
+
+**Real Example:**
+```markdown
+![Main Dashboard After Login](https://raw.githubusercontent.com/mushfoo/puka/feature/epic-2-validation/screenshots/01-main-dashboard.png)
+
+![Mobile Navigation Menu](https://raw.githubusercontent.com/mushfoo/puka/feature/epic-2-validation/screenshots/02-mobile-nav.png)
+```
+
+**Copy-Paste Template:**
+```markdown
+![DESCRIPTION_HERE](https://raw.githubusercontent.com/ORG_NAME/REPO_NAME/BRANCH_NAME/screenshots/FILENAME.png)
+```
+
+### **Important Guidelines**
+
+- **✅ Use `raw.githubusercontent.com`** for proper image rendering in GitHub
+- **✅ Include your feature branch name** in the URL path  
+- **✅ Use descriptive alt text** that explains what the image shows
+- **✅ Use full path from repository root** (e.g., `screenshots/filename.png`)
+- **✅ Test the image URL** by pasting it in a browser before submitting PR
+- **❌ Never use relative paths** like `./` or `../` 
+- **❌ Never add leading slashes** before the markdown image syntax
+
+### **Quick Reference Workflow**
+
+1. **Save screenshot** in your project's `screenshots/` directory
+2. **Commit and push** the screenshot to your feature branch
+3. **Copy this template**: `![Description](https://raw.githubusercontent.com/ORG/REPO/BRANCH/screenshots/FILENAME.png)`
+4. **Replace placeholders** with your actual org, repo, branch, and filename
+5. **Test the URL** in a browser to verify it loads properly
+6. **Paste in PR description** and verify the image renders
+
+---
+
 *Remember: The best code is code that works reliably, is easy to understand, and solves real user problems without unnecessary complexity.*
