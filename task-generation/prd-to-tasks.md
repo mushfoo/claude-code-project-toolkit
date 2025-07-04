@@ -1,242 +1,160 @@
-# PRD to Tasks Breakdown Prompt
+# PRD to Tasks Breakdown
 
-Use this prompt to convert a completed PRD into a detailed, actionable task breakdown for development.
+Convert any PRD version into actionable development tasks with automatic version detection and systematic task tracking.
 
 ---
 
 **PROMPT:**
 
-You are a technical project manager creating a detailed task breakdown from a completed Product Requirements Document (PRD). Your goal is to transform the PRD into specific, actionable development tasks with clear priorities, dependencies, and acceptance criteria.
+Generate comprehensive task breakdown from my latest PRD version with appropriately versioned task file.
 
-## PRD to Analyze
+## Auto-Detection Process
 
-**PRD Document:**
+### Step 1: Identify Latest PRD and Generate Matching Task File
+
+- Scan planning/ directory: `prd.md`, `prd-v2.md`, `prd-v3.md`, etc.
+- Use highest version number as source
+- Generate matching task file:
+  - `prd.md` (v1.0) → `planning/tasks.md`
+  - `prd-v2.md` (v2.0) → `planning/tasks-v2.md`
+  - `prd-v3.md` (v3.0) → `planning/tasks-v3.md`
+
+### Step 2: Current Context
+
+**Latest PRD File:**
 
 ```
-[PASTE THE COMPLETE PRD DOCUMENT HERE]
+[PASTE CONTENT OF HIGHEST VERSION PRD FILE]
 ```
 
-**UI Prototypes** (if available):
+**Existing Task Files:**
 
 ```
-[PASTE DETAILS ABOUT UI PROTOTYPES FROM planning/ui-prototypes/ OR STATE "No UI prototypes available"]
+[LIST: tasks.md, tasks-v2.md, tasks-v3.md, etc. - note which exist]
 ```
 
-## Task Breakdown Structure to Create
+**Recent Git Progress:**
 
-### 1. Project Setup & Foundation Tasks
+```
+[REVIEW RECENT COMMITS - identify completed features if relevant]
+```
 
-Break down initial setup into specific tasks:
+## Task File Generation
 
-- **Repository Setup**: Git repository, branch strategy, initial commit
-- **Development Environment**: Docker, local development setup, tooling configuration
-- **CI/CD Pipeline**: GitHub Actions, testing automation, deployment pipeline
-- **Documentation Structure**: README, contributing guidelines, project documentation
-
-### 2. Architecture & Infrastructure Tasks
-
-Convert technical architecture into implementation tasks:
-
-- **Core Architecture**: Project structure, configuration management, core services
-- **Database/Storage Setup**: Data layer implementation, migration strategy
-- **API Foundation**: Route structure, middleware, authentication framework
-- **Frontend Foundation**: Component library, routing, state management setup
-
-### 3. Feature Development Tasks
-
-Break each PRD feature into granular development tasks:
-
-#### For Each Major Feature:
-
-- **Backend Implementation**: API endpoints, business logic, data models
-- **Frontend Implementation**: UI components, user interactions, data integration
-- **UI Implementation** (if prototypes available): Convert UI prototypes to functional components
-- **Testing Implementation**: Unit tests, integration tests, E2E tests
-- **Documentation**: API docs, user guides, inline code documentation
-
-### 4. Integration & Testing Tasks
-
-Convert testing requirements into specific tasks:
-
-- **Unit Testing**: Individual component and function tests
-- **Integration Testing**: API integration, database integration, third-party service integration
-- **End-to-End Testing**: Complete user workflow tests
-- **Performance Testing**: Load testing, response time validation
-- **Security Testing**: Input validation, authentication, authorization tests
-
-### 5. Deployment & Operations Tasks
-
-Transform deployment requirements into actionable tasks:
-
-- **Production Environment**: Server setup, domain configuration, SSL certificates
-- **Monitoring Setup**: Logging, metrics, alerting, health checks
-- **Backup Strategy**: Data backup, recovery procedures, backup testing
-- **Documentation**: Deployment guides, operational runbooks
-
-## Task Format Requirements
-
-For each task, provide:
-
-### Task Template:
+### Output Format: `planning/tasks-v[X].md`
 
 ```markdown
-## Task [ID]: [Clear, Action-Oriented Title]
+# [Project Name] - Development Tasks v[X]
 
-**Epic**: [Which major feature/epic this belongs to]
-**Priority**: [High/Medium/Low]
-**Estimated Effort**: [Hours or Story Points]
-**Dependencies**: [List any tasks that must be completed first]
+**Generated from**: [PRD version] on [Date]
+**Development Phase**: [MVP/Post-MVP/Enhancement]
 
-### Description
+## Quick Status Overview
 
-[Clear description of what needs to be accomplished]
+| Epic        | Total Tasks | Completed | In Progress | Not Started |
+| ----------- | ----------- | --------- | ----------- | ----------- |
+| [Epic Name] | X           | 0         | 0           | X           |
 
-### Acceptance Criteria
+**Last Updated**: [Date]
 
-- [ ] [Specific, testable criterion 1]
-- [ ] [Specific, testable criterion 2]
-- [ ] [Specific, testable criterion 3]
+## Next Priority Tasks
 
-### Technical Notes
+1. **T001**: [Task name] - [Brief description]
+2. **T002**: [Task name] - [Brief description]
+3. **T003**: [Task name] - [Brief description]
 
-[Any technical implementation details, gotchas, or considerations]
+## Epic Breakdown
 
-### Testing Requirements
+### Epic E001: [Epic Name]
 
-- [ ] [Unit tests written and passing]
-- [ ] [Integration tests implemented]
-- [ ] [Manual testing checklist completed]
+**Priority**: High/Medium/Low
+**Dependencies**: [Prerequisites]
 
-### Definition of Done
+#### Feature F001: [Feature Name]
 
-- [ ] [Code written and reviewed]
-- [ ] [Tests passing with >90% coverage]
-- [ ] [Documentation updated]
-- [ ] [Feature deployed and validated]
+**User Story**: As [user], I want [capability] so that [benefit]
+
+##### Task T001: [Implementation Task]
+
+**Priority**: High/Medium/Low
+**Effort**: [Hours/Complexity]
+**Dependencies**: [Prerequisites]
+
+**Acceptance Criteria**:
+
+- [ ] [Specific requirement 1]
+- [ ] [Specific requirement 2]
+- [ ] [Specific requirement 3]
+
+**Testing Requirements**:
+
+- [ ] Unit tests written and passing
+- [ ] Integration tests implemented
+- [ ] Manual testing completed
+- [ ] Playwright UI validation (if UI changes)
+
+**Definition of Done**:
+
+- [ ] All acceptance criteria met
+- [ ] Code reviewed
+- [ ] Tests passing >90% coverage
+- [ ] Feature deployed and validated
+
+**Git Workflow**:
+
+- Branch: `feature/t001-[description]`
+- Commits: `Task T001: [change description]`
+- Completion: `Task T001: Mark as completed`
+
+[Continue for all tasks...]
 ```
 
-## Git Workflow Integration
+### Task Structure Requirements
 
-Each task should include git workflow requirements:
+#### Task Breakdown Rules
 
-- **Branch naming convention**: `feature/task-[id]-[short-description]`
-- **Commit message format**: `Task [ID]: [Clear description of changes]`
-- **Pull request requirements**: What must be included in PR description
-- **Review criteria**: What reviewers should check
+- Epic → Feature → Task → Acceptance Criteria
+- Tasks completable in 1-4 hours
+- Clear dependencies and priority order
+- Specific, testable acceptance criteria
+- Git workflow integration
 
-## Prioritization Guidelines
+#### Priority Order
 
-### High Priority (Week 1-2):
+1. Foundation/setup tasks first
+2. Core features by user value
+3. Enhancement features
+4. Testing and deployment tasks
 
-- Foundation and setup tasks that other work depends on
-- Core MVP features that deliver immediate user value
-- Critical path items that block other development
+## Git Integration
 
-### Medium Priority (Week 3-4):
+### Development Workflow
 
-- Important features that enhance user experience
-- Nice-to-have functionality within MVP scope
-- Performance optimizations and polish
+```bash
+# Generate new task file
+git add planning/tasks-v[X].md
+git commit -m "Generate tasks-v[X] from PRD v[X]"
 
-### Low Priority (Future Phases):
-
-- Advanced features for later phases
-- Optimizations that don't impact core functionality
-- Documentation improvements and tooling enhancements
-
-## Task Dependencies Management
-
-Create a clear dependency chain:
-
-1. **Foundation Tasks**: Must be completed before any feature work
-2. **Core Features**: Can be developed in parallel once foundation is ready
-3. **Integration Tasks**: Require multiple components to be complete
-4. **Polish Tasks**: Final testing, documentation, and deployment preparation
-
-## Development Workflow Integration
-
-Each task should specify:
-
-- **Development environment requirements**
-- **Testing approach and tools to use**
-- **Code review checklist items**
-- **Deployment considerations**
-- **User validation approach**
-
-## Instructions for Task Creation
-
-1. **Review the entire PRD**: Understand all requirements, constraints, and success criteria
-
-2. **Check for UI prototypes**: If UI prototypes are available, include specific UI implementation tasks
-
-3. **Identify major epics**: Group related functionality into logical development phases
-
-4. **Break down each epic**: Create granular tasks that can be completed in 1-4 hours
-
-5. **Establish dependencies**: Ensure tasks are ordered logically and dependencies are clear
-
-6. **Assign realistic estimates**: Base effort estimates on similar tasks and team capabilities
-
-7. **Include testing requirements**: Every feature task should have corresponding testing tasks
-
-8. **Consider Claude Code workflow**: Optimize task breakdown for rapid development with comprehensive testing
-
-9. **Validate completeness**: Ensure all PRD requirements are covered by tasks
-
-## Special Considerations for Claude Code Development
-
-- **Detailed specifications**: Each task should have enough detail for Claude to implement without additional clarification
-- **Testing emphasis**: Include specific testing requirements and user validation steps
-- **Integration focus**: Ensure tasks validate real-world functionality, not just code completion
-- **Documentation parity**: Include documentation tasks alongside feature development
-- **Simplicity reminders**: Reference development guidelines to prevent over-engineering
-
-## Task Tracking Implementation
-
-Include the following task tracking instructions in your generated task breakdown:
-
-### Task Tracking Instructions
-
-Each task should include checkboxes in the "Acceptance Criteria", "Testing Requirements", and "Definition of Done" sections. These should be checked off during development:
-
-1. **During Development**: Check off acceptance criteria as each feature is implemented
-2. **During Testing**: Check off testing requirements as tests are written and passed
-3. **Before Task Completion**: Ensure all "Definition of Done" items are checked
-4. **Task Status**: Once all checkboxes are complete, mark the entire task as done by:
-   - Adding `✅ COMPLETED` to the task title
-   - Creating a commit with message: `Task [ID]: Mark as completed`
-   - Moving to the next task in the dependency chain
-
-**Example of completed task:**
-```markdown
-## Task F001: Initialize React + TypeScript + Vite Project ✅ COMPLETED
+# Task development
+git checkout -b feature/t001-[description]
+git commit -m "Task T001: [progress description]"
+git commit -m "Task T001: Mark as completed"
 ```
 
-### Task Completion Status Table
+### Task Completion Process
 
-Include a status overview table at the beginning of the document:
+1. Complete all acceptance criteria
+2. Update task checkboxes in task file
+3. Commit completion: `Task T[ID]: Mark as completed`
+4. Move to next priority task
 
-```markdown
-## Task Completion Status
+## Output Requirements
 
-### Quick Status Overview
-| Epic | Total Tasks | Completed | In Progress | Not Started |
-|------|------------|-----------|-------------|-------------|
-| [Epic Name] | X | 0 | 0 | X |
+**Generate**: `planning/tasks-v[X].md` (matching PRD version)
+**Include**: Complete task breakdown with priorities and dependencies
+**Format**: Ready for immediate development use
+**Integration**: Git workflow and development guidelines compliant
 
-**Last Updated**: [Update this timestamp when marking tasks complete]
-```
+---
 
-## Output Format
-
-**Save the completed task breakdown as**: `planning/tasks.md` to keep it organized with other project planning documents.
-
-Please create:
-
-1. **Executive Summary**: Overview of total tasks, estimated timeline, and major milestones
-2. **Epic Breakdown**: High-level grouping of tasks by major functionality
-3. **Detailed Task List**: Complete task breakdown with all required information
-4. **Dependency Graph**: Visual or textual representation of task dependencies
-5. **Sprint Planning Suggestions**: Recommended grouping of tasks for development sprints
-
-Analyze the provided PRD and create a comprehensive task breakdown following this structure.
+**Next Step**: Use generated task file as development roadmap, starting with highest priority tasks.
